@@ -1,9 +1,10 @@
 import 'package:sahithyolsav/model/route_model.dart';
 import 'package:sahithyolsav/view/home/home_screen.dart';
+import 'package:sahithyolsav/view/score_board/score_board.dart';
 import 'package:sahithyolsav/widget/ssf_placeholder.dart';
 
 const String home = "home";
-const String meal = "Programs";
+const String scoreBoard = "score-board";
 const String progress = "Point";
 
 List<RouteModel> mainRouteList = [
@@ -15,6 +16,14 @@ List<RouteModel> mainRouteList = [
     lightSvg: 'assets/icons/home_light.svg',
     routeName: home,
     widget: SsfPlaceHolder(child: HomeScreen()),
+  ),
+  RouteModel(
+    id: 1,
+    name: "Score Board",
+    darkSvg: 'assets/icons/home_fill.svg',
+    lightSvg: 'assets/icons/home_light.svg',
+    routeName: scoreBoard,
+    widget: SsfPlaceHolder(enableBackButton: true, title: "Score Board", child: ScoreBoard()),
   ),
   // RouteModel(
   //   id: 1,

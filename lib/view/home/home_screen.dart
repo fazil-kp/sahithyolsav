@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sahithyolsav/config/colors.dart';
 import 'package:sahithyolsav/config/theme.dart';
 import 'package:sahithyolsav/helper/extensions.dart';
+import 'package:sahithyolsav/route/route.dart';
+import 'package:sahithyolsav/route/route_list.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -21,7 +23,12 @@ class HomeScreen extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             spacing: 8,
             children: [
-              HomeCard(title: "Score Board", onTap: () {}),
+              HomeCard(
+                title: "Score Board",
+                onTap: () {
+                  routeX.pushNamed(scoreBoard);
+                },
+              ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -57,18 +64,21 @@ class HomeScreen extends StatelessWidget {
 class CustomContainer extends StatelessWidget {
   final Widget child;
   final String? image;
+
   const CustomContainer({super.key, required this.child, this.image});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: context.width,
       height: context.height,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        image: DecorationImage(image: AssetImage(image ?? "assets/images/bg_Image2.png"), fit: BoxFit.cover),
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          Image.asset(image ?? "assets/images/bg_Image2.png", fit: BoxFit.cover, height: 100, width: 200),
+          child,
+        ],
       ),
-      child: child,
     );
   }
 }
