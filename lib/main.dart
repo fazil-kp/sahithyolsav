@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sahithyolsav/config/colors.dart';
 import 'package:sahithyolsav/route/route.dart';
+import 'package:url_strategy/url_strategy.dart';
 
 void main() async {
+    setPathUrlStrategy();
+
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const ProviderScope(child: Insights()));
 }
