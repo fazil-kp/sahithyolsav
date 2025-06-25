@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomContainer(
-      image: "assets/images/bg_Image1.png",
+      image: "assets/images/bg_Image1.jpg",
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -75,7 +75,7 @@ class CustomContainer extends StatelessWidget {
       child: Stack(
         fit: StackFit.expand,
         children: [
-          Image.asset(image ?? "assets/images/bg_Image2.png", fit: BoxFit.cover),
+          Image.asset(image ?? "assets/images/rule1.jpg", fit: BoxFit.cover),
           child,
         ],
       ),
