@@ -75,7 +75,7 @@ class CustomContainer extends StatelessWidget {
       child: Stack(
         fit: StackFit.expand,
         children: [
-          Image.asset(image ?? "assets/images/bg_Image2.png", fit: BoxFit.cover, height: 100, width: 200),
+          Image.asset(image ?? "assets/images/bg_Image2.png", fit: BoxFit.cover),
           child,
         ],
       ),
